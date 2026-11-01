@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "SpaceUni Sandbox",
+  "short_name": "SpaceUni",
+  "description": "Simulador sandbox del universo: crea planetas, estrellas y sistemas, y juega con un amigo.",
+  "lang": "es",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#03040a",
+  "theme_color": "#03040a",
+  "categories": ["games", "education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
