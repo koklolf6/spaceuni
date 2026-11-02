@@ -4865,9 +4865,13 @@ requestAnimationFrame(tk);window.CosmosVivo={launch,pick,clouds,fuse,N:NU,draw:d
 /* ===== Monedas v2: tienda + monedas flotantes recolectables (combo, gemas, cometas, fiebre, lluvia) + Modo Dev ===== */
 (function(){try{
 const LS={g(k,d){try{const v=localStorage.getItem(k);return v===null?d:v}catch(e){return d}},s(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
-const SH=[['Cuerpos',[['cat:evol','Evolucionadas',60,'Gigantes, supergigantes y Wolf-Rayet'],['cat:compactas','Compactas',90,'Enanas blancas, púlsares y magnetares'],['cat:agujeros','Agujeros negros',150,'Los monstruos del centro de las galaxias'],['cat:hipoteticos','Hipotéticos',180,'Planeta Nueve, Némesis y mundos raros'],['cat:exoticos','Exóticos',200,'Agujeros de gusano, gravastars y más'],['cat:teoricos','Estrellas teóricas',250,'Esferas de Dyson y estrellas de Planck']]],
-['Armas',[['w:Nuclear','Nuclear',40],['w:Racimo','Racimo',50],['w:Cañón de riel','Cañón de riel',70],['w:Lluvia de meteoros','Lluvia de meteoros',90],['w:Rayo tractor','Rayo tractor',100],['w:Pulsar','Pulsar',120],['w:Onda gravitatoria','Onda gravitatoria',150],['w:Antimateria','Antimateria',180],['w:Singularidad','Singularidad',220],['w:Supernova','Supernova',260]]],
-['Escenarios',[['p:Cúmulo estelar','Cúmulo estelar',40],['p:Cuerpos menores','Cuerpos menores',40],['p:Cinturón de asteroides','Cinturón de asteroides',50,'Nuevo'],['p:Escala real','Escala real',60],['p:Vida estelar','Vida estelar',70],['p:Cometas del Oort','Cometas del Oort',70,'Nuevo'],['p:Zoo estelar','Zoo estelar',80],['p:Trinaria caótica','Trinaria caótica',90,'Nuevo: tres soles inestables'],['p:Supernova inminente','Supernova inminente',100],['p:Vía Láctea','Vía Láctea',120],['p:Cuerpos teóricos','Cuerpos teóricos',130],['p:Cuásar','Cuásar',150],['p:Agujero de gusano','Agujero de gusano',160]]],
+const SH=[['Cuerpos',[['cat:evol','Evolucionadas',60,'Gigantes, supergigantes y Wolf-Rayet'],['cat:compactas','Compactas',90,'Enanas blancas, púlsares y magnetares'],['cat:agujeros','Agujeros negros',150,'Los monstruos del centro de las galaxias'],['cat:hipoteticos','Hipotéticos',180,'Planeta Nueve, Némesis y mundos raros'],['cat:exoticos','Exóticos',200,'Agujeros de gusano, gravastars y más'],['cat:teoricos','Estrellas teóricas',250,'Esferas de Dyson y estrellas de Planck'],['cat:raros','Mundos raros',90,'Nuevo: planetas de diamante, hierro, cristal, oro y gigantes de neón']]],
+['Armas',[['w:Nuclear','Nuclear',40],['w:Racimo','Racimo',50],['w:Cañón de riel','Cañón de riel',70],['w:Lluvia de meteoros','Lluvia de meteoros',90],['w:Rayo tractor','Rayo tractor',100],['w:Pulsar','Pulsar',120],['w:Onda gravitatoria','Onda gravitatoria',150],['w:Antimateria','Antimateria',180],['w:Singularidad','Singularidad',220],['w:Supernova','Supernova',260],["w:Plasma", "Plasma", 60],["w:Granizo cósmico", "Granizo cósmico", 80],["w:Láser orbital", "Láser orbital", 110],["w:Llamarada estelar", "Llamarada estelar", 130],["w:Bomba de fusión", "Bomba de fusión", 170],["w:Microagujero negro", "Microagujero negro", 210],["w:Rayo de neutrinos", "Rayo de neutrinos", 240],["w:Big Bang", "Big Bang", 320]]],
+['Escenarios',[['p:Cúmulo estelar','Cúmulo estelar',40],['p:Cuerpos menores','Cuerpos menores',40],['p:Cinturón de asteroides','Cinturón de asteroides',50,'Nuevo'],['p:Escala real','Escala real',60],['p:Vida estelar','Vida estelar',70],['p:Cometas del Oort','Cometas del Oort',70,'Nuevo'],['p:Zoo estelar','Zoo estelar',80],['p:Trinaria caótica','Trinaria caótica',90,'Nuevo: tres soles inestables'],['p:Supernova inminente','Supernova inminente',100],['p:Vía Láctea','Vía Láctea',120],['p:Cuerpos teóricos','Cuerpos teóricos',130],['p:Cuásar','Cuásar',150],['p:Agujero de gusano','Agujero de gusano',160],["p:Mundos raros", "Mundos raros", 60, "Nuevo: 7 planetas extraños y un gigante de neón"],["p:Sistema helado", "Sistema helado", 70, "Nuevo: enana roja con mundos de hielo"],["p:Gigantes de neón", "Gigantes de neón", 90, "Nuevo: tres gigantes de colores"],["p:Lluvia de cometas", "Lluvia de cometas", 80, "Nuevo: cometas que caen hacia la estrella"],["p:Duelo de agujeros negros", "Duelo de agujeros negros", 120, "Nuevo: dos agujeros negros en espiral"]]],
+["Naves",[["ship:interceptor", "Interceptor", 80, "Delgado y veloz, alas en delta"],["ship:crucero", "Crucero", 120, "Casco ancho con motores triples"],["ship:fantasma", "Fantasma", 150, "Ala voladora de aspecto sigiloso"],["ship:destructor", "Destructor", 200, "Cañones, torre de mando y 4 motores"],["ship:platillo", "Platillo volador", 140, "Disco con cúpula y luces"],["ship:cohete", "Cohete retro", 60, "Clásico cohete con aletas"]]],
+["Pinturas de nave",[["col:carmesi", "Carmesí", 40, "Rojo intenso"],["col:cobalto", "Cobalto", 40, "Azul profundo"],["col:esmeralda", "Esmeralda", 40, "Verde brillante"],["col:violeta", "Violeta", 50, "Morado cósmico"],["col:rosa", "Rosa neón", 50, "Rosa fuerte"],["col:hielo", "Hielo", 40, "Azul helado"],["col:negro", "Negro mate", 60, "Oscuro con detalles rojos"],["col:oro", "Dorada", 100, "Metal dorado"],["col:arcoiris", "Arcoíris", 160, "Cambia de color todo el tiempo"]]],
+["Motores de nave",[["eng:azul", "Motor azul", 50, "Llama azul eléctrico"],["eng:verde", "Motor verde", 50, "Llama verde ácido"],["eng:violeta", "Motor violeta", 60, "Llama morada"],["eng:blanco", "Motor blanco", 80, "Llama blanca pura"],["eng:arcoiris", "Motor arcoíris", 140, "Estela multicolor"]]],
+["Armas de nave",[["sw:Plasma", "Plasma", 70, "Bola de plasma verde"],["sw:Ráfaga", "Ráfaga", 90, "Tres disparos rápidos a la vez"],["sw:Riel", "Riel", 120, "Proyectil veloz que perfora"],["sw:Enjambre", "Enjambre", 150, "Seis misiles en abanico"],["sw:Pulsar", "Pulsar", 180, "Descarga violeta potente"],["sw:Nova", "Nova", 250, "Explosión enorme, recarga lenta"]]],
 ['Gráficos',[['g:super','Super',80],['g:ultra','Ultra',200],['g:sultrap','Súper Ultra Rendimiento',300],['g:sultra','Súper Ultra',450]]],
 ['Cosmos',[['cx:fly','Viajar a una galaxia',30,'Botón «Ir a esta galaxia»'],['cx:launch','Lanzar universos',80,'Provoca choques entre universos (el primero es gratis)']]],
 ['Mejoras',[['up:idle','Telescopio paciente',180,'Ganas el doble de monedas con el tiempo'],['up:boost','Imán de monedas',250,'Todo lo que ganas sube un 50 %'],['up:magnet','Atractor cósmico',150,'Las monedas cercanas a tu dedo o cursor vuelan hacia ti'],['up:radar','Radar de monedas',220,'Aparecen monedas flotantes mucho más seguido'],['up:combo','Racha duradera',200,'El combo dura 5 s en vez de 3 s']]]];
@@ -5718,5 +5722,233 @@ html body #smenu #smmain>.opts .ot{flex:1 1 100%}
 html body #smenu #smmain>.opts button{flex:1 1 30%!important;min-width:140px;font-size:13px!important;padding:6px 10px!important;min-height:36px!important}
 html body #smenu #smlist{flex-direction:column;gap:8px}
 </style>
+<script>
+/* =====================================================================
+   EXPANSIÓN · Naves + Hangar · pinturas y motores · armas · mundos raros
+   escenarios nuevos · Introducción
+   (los precios y nombres de la tienda vienen de HGD, el mismo dato que usa la tienda)
+   ===================================================================== */
+(function(){try{
+const HGD={"ships": [["interceptor", "Interceptor", 80, "Delgado y veloz, alas en delta"], ["crucero", "Crucero", 120, "Casco ancho con motores triples"], ["fantasma", "Fantasma", 150, "Ala voladora de aspecto sigiloso"], ["destructor", "Destructor", 200, "Cañones, torre de mando y 4 motores"], ["platillo", "Platillo volador", 140, "Disco con cúpula y luces"], ["cohete", "Cohete retro", 60, "Clásico cohete con aletas"]], "paints": [["carmesi", "Carmesí", 40, "Rojo intenso"], ["cobalto", "Cobalto", 40, "Azul profundo"], ["esmeralda", "Esmeralda", 40, "Verde brillante"], ["violeta", "Violeta", 50, "Morado cósmico"], ["rosa", "Rosa neón", 50, "Rosa fuerte"], ["hielo", "Hielo", 40, "Azul helado"], ["negro", "Negro mate", 60, "Oscuro con detalles rojos"], ["oro", "Dorada", 100, "Metal dorado"], ["arcoiris", "Arcoíris", 160, "Cambia de color todo el tiempo"]], "engs": [["azul", "Motor azul", 50, "Llama azul eléctrico"], ["verde", "Motor verde", 50, "Llama verde ácido"], ["violeta", "Motor violeta", 60, "Llama morada"], ["blanco", "Motor blanco", 80, "Llama blanca pura"], ["arcoiris", "Motor arcoíris", 140, "Estela multicolor"]], "sw": [["Plasma", "Plasma", 70, "Bola de plasma verde"], ["Ráfaga", "Ráfaga", 90, "Tres disparos rápidos a la vez"], ["Riel", "Riel", 120, "Proyectil veloz que perfora"], ["Enjambre", "Enjambre", 150, "Seis misiles en abanico"], ["Pulsar", "Pulsar", 180, "Descarga violeta potente"], ["Nova", "Nova", 250, "Explosión enorme, recarga lenta"]]};
+const LS={g(k,d){try{const v=localStorage.getItem(k);return v===null?d:v}catch(e){return d}},s(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const say=t=>{try{toast(t)}catch(e){}};
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const has=k=>{try{return window.SUCoins?window.SUCoins.has(k):true}catch(e){return true}};
+const ask=(k,b)=>{try{window.SUCoins.ask(k,b)}catch(e){}};
+
+/* ---------------------------------------------------------------
+   1 · MUNDOS RAROS (nuevos tipos de cuerpo, categoría «Mundos raros»)
+   --------------------------------------------------------------- */
+const NB={
+ x_diamante:{name:'Planeta de diamante',m:1.4,r:.85,hp:22,bump:.02,glow:1,pal:[[.72,.9,1],[.95,.98,1]],emis:[.05,.1,.16],info:'Planeta de diamante · rico en carbono, dura corteza cristalina que brilla como una joya'},
+ x_hierro:{name:'Planeta de hierro',m:2,r:.8,hp:24,bump:.18,style:'roca',pal:[[.3,.28,.28],[.56,.38,.28]],info:'Planeta de hierro · un núcleo metálico casi desnudo, oxidado y pesado'},
+ x_cristal:{name:'Mundo de cristal',m:1.2,r:.9,hp:12,bump:.08,glow:1,pal:[[.45,.95,.85],[.75,.5,1]],emis:[.03,.1,.12],info:'Mundo de cristal · su superficie son enormes agujas de cuarzo que refractan la luz'},
+ x_selva:{name:'Mundo selvático',m:1.3,r:1,hp:8,bump:.05,glow:1,pal:[[.04,.3,.1],[.12,.5,.22]],info:'Mundo selvático · jungla continua bajo nubes densas y húmedas'},
+ x_desierto:{name:'Mundo desierto',m:1,r:.95,hp:8,bump:.12,style:'roca',pal:[[.85,.62,.3],[.62,.38,.2]],info:'Mundo desierto · dunas de un horizonte al otro, sin océanos'},
+ x_toxico:{name:'Mundo tóxico',m:1.1,r:.95,hp:8,bump:.06,glow:1,pal:[[.35,.5,.08],[.75,.78,.18]],emis:[.08,.1,0],info:'Mundo tóxico · atmósfera de azufre y mares de ácido amarillo-verdoso'},
+ x_carmesi:{name:'Planeta carmesí',m:1.5,r:1,hp:10,bump:.07,glow:1,pal:[[.45,.04,.07],[.85,.18,.12]],emis:[.1,.01,.01],info:'Planeta carmesí · óxidos rojos y rocas de sangre seca'},
+ x_oro:{name:'Planeta de oro',m:3,r:.85,hp:26,bump:.03,glow:1,pal:[[.85,.65,.12],[1,.88,.45]],emis:[.1,.07,0],info:'Planeta de oro · un mundo metálico dorado, puro y brillante'},
+ x_sombra:{name:'Mundo de sombra',m:1,r:.9,hp:10,bump:.1,glow:1,pal:[[.02,.02,.06],[.12,.05,.25]],emis:[.08,.02,.18],info:'Mundo de sombra · casi negro, solo brilla un poco en violeta'},
+ x_neon:{name:'Gigante de neón',m:28,r:2,hp:18,bump:0,glow:1,style:'bandas',pal:[[.15,.95,.85],[.95,.2,.8]],emis:[.1,.15,.2],info:'Gigante de neón · bandas turquesa y magenta, un gigante gaseoso fluorescente'},
+ x_tormenta:{name:'Gigante de tormentas',m:35,r:2.3,hp:20,bump:0,glow:1,style:'bandas',pal:[[.3,.22,.5],[.85,.75,.95]],info:'Gigante de tormentas · huracanes del tamaño de planetas en eterno movimiento'},
+ x_anillos:{name:'Gigante de anillos violeta',m:32,r:2.1,hp:18,bump:0,glow:1,style:'bandas',pal:[[.45,.3,.7],[.8,.65,.95]],ring:[1.5,2.7,'#c9a0ff'],info:'Gigante de anillos violeta · anillos de hielo teñidos de amatista'}
+};
+try{Object.entries(NB).forEach(([k,t])=>{t.cat='raros';MODS.bodies[k]=t});
+ if(!CATS.some(c=>c[0]==='raros')){const i=CATS.findIndex(c=>c[0]==='otros');CATS.splice(i<0?CATS.length:i,0,['raros','Mundos raros'])}}catch(e){console.warn('Mundos raros',e)}
+
+/* ---------------------------------------------------------------
+   2 · ARMAS NUEVAS (modo Destruir)
+   --------------------------------------------------------------- */
+const pullAll=(b,A,k,R,col,fx)=>{const p=b.pos.clone();A.bodies.forEach(o=>{if(o===b||o.dead||o.fixed)return;const d=k>0?p.clone().sub(o.pos):o.pos.clone().sub(p),L=d.length();if(L<.3||L>R)return;o.vel.addScaledVector(d.normalize(),Math.abs(k)*(1-L/R)/(1+o.m*.0012))});
+  shockFx(p,col,R,fx.dur,fx.op);if(fx.d2)shockFx(p,fx.d2,R*.7,fx.dur*.75,fx.op*.7);A.boom(p,new A.THREE.Vector3(0,1,0),{color:col,radius:fx.rad,sparks:fx.sp,shake:fx.sh},b.r)};
+const NW=[
+ {name:'Plasma',kind:'missile',radius:.35,depth:.14,power:1.8,speed:26,size:.26,color:'#7dff6a',sparks:90,shake:.25},
+ {name:'Granizo cósmico',kind:'missile',rock:true,multi:12,gap:60,spread:.6,radius:.22,depth:.1,power:1.1,speed:26,size:.2,color:'#bfe8ff',sparks:50,shake:.25},
+ {name:'Láser orbital',kind:'beam',width:.3,radius:.3,depth:.09,power:4,color:'#ff6a3d',sparks:20,shake:.45,steps:40},
+ {name:'Llamarada estelar',kind:'missile',multi:16,gap:50,spread:.8,radius:.28,depth:.12,power:1.6,speed:28,size:.22,color:'#ffb23d',sparks:60,shake:.3},
+ {name:'Bomba de fusión',kind:'missile',radius:1.1,depth:.35,power:6,speed:16,size:.45,color:'#ffe08a',sparks:260,shake:.9},
+ {name:'Microagujero negro',kind:'missile',custom:(b,dl,A)=>pullAll(b,A,16,140,'#7a3dff',{dur:1.8,op:.4,rad:1.4,sp:200,sh:.7})},
+ {name:'Rayo de neutrinos',kind:'beam',width:.35,radius:.35,depth:.12,power:5.5,color:'#9dff4d',sparks:26,shake:.5,steps:48},
+ {name:'Big Bang',kind:'missile',custom:(b,dl,A)=>pullAll(b,A,-22,220,'#fff2c0',{dur:2.2,op:.5,d2:'#ff9a4d',rad:2.6,sp:420,sh:1.2})}
+];
+try{NW.forEach(w=>{if(!MODS.weapons.some(x=>x.name===w.name))MODS.weapons.push(w)})}catch(e){console.warn('Armas',e)}
+
+/* ---------------------------------------------------------------
+   3 · ESCENARIOS NUEVOS
+   --------------------------------------------------------------- */
+try{Object.assign(MODS.presets,{
+ 'Mundos raros':A=>{const s=A.add('estrella',0,0,0);['x_diamante','x_hierro','x_cristal','x_selva','x_desierto','x_toxico','x_oro'].forEach((t,i)=>A.orbit(s,10+i*6.5,t));A.orbit(s,66,'x_neon');A.cam.d=115},
+ 'Sistema helado':A=>{const s=A.add('estM',0,0,0);A.orbit(s,10,'hielo');A.orbit(s,17,'oceano');A.orbit(s,25,'hielo');A.orbit(s,34,'enano');for(let i=0;i<10;i++)A.orbit(s,40+Math.random()*30,'cometa');A.cam.d=95},
+ 'Gigantes de neón':A=>{const s=A.add('estrella',0,0,0);A.orbit(s,24,'x_neon');A.orbit(s,42,'x_tormenta');A.orbit(s,62,'x_anillos');A.orbit(s,12,'x_sombra');A.cam.d=125},
+ 'Duelo de agujeros negros':A=>{const d=15,v=Math.sqrt(5000/(4*d))*.96;A.add('agujero',-d,0,0,0,0,-v);A.add('agujero',d,0,0,0,0,v);A.orbit({pos:new A.THREE.Vector3(),vel:new A.THREE.Vector3(),m:10000},75,'estrella');A.orbit({pos:new A.THREE.Vector3(),vel:new A.THREE.Vector3(),m:10000},105,'gigante');A.cam.d=170},
+ 'Lluvia de cometas':A=>{const s=A.add('estrella',0,0,0);A.orbit(s,14,'planeta');A.orbit(s,30,'gigante');for(let i=0;i<28;i++){const c=A.orbit(s,26+Math.random()*50,'cometa');if(c&&c.vel)c.vel.multiplyScalar(.45+Math.random()*.4)}A.cam.d=110}
+})}catch(e){console.warn('Escenarios',e)}
+try{buildUI()}catch(e){console.warn('buildUI',e)}
+
+/* ---------------------------------------------------------------
+   4 · NAVES, PINTURAS Y MOTORES
+   --------------------------------------------------------------- */
+const PAINTS={base:{h:0xcfd6e6,w:0x9aa6c4,a:0xff7a3d,sw:['#cfd6e6','#ff7a3d']},
+ carmesi:{h:0xc2243a,w:0x7d1624,a:0xffd0d6,sw:['#c2243a','#ffd0d6']},cobalto:{h:0x2f5fd6,w:0x1c3a8a,a:0x9fd0ff,sw:['#2f5fd6','#9fd0ff']},
+ esmeralda:{h:0x1fa862,w:0x127042,a:0xd8ffe8,sw:['#1fa862','#d8ffe8']},violeta:{h:0x7b4bd6,w:0x4a2a96,a:0xe0ccff,sw:['#7b4bd6','#e0ccff']},
+ rosa:{h:0xff5fb0,w:0xb02f78,a:0xfff0f8,sw:['#ff5fb0','#fff0f8']},oro:{h:0xe8b923,w:0xa57a10,a:0xffffff,em:0x3a2a00,sw:['#e8b923','#ffffff']},
+ negro:{h:0x23262e,w:0x14161b,a:0xff3d4d,sw:['#23262e','#ff3d4d']},hielo:{h:0xbfe9ff,w:0x8cc4e6,a:0x2b8fd6,sw:['#bfe9ff','#2b8fd6']},
+ arcoiris:{h:0xff5555,w:0x55aaff,a:0xffee55,rb:1,sw:['#ff5555','#55aaff']}};
+const ENGS={naranja:{c:0xffa860,p:'#ffb060',q:'#9fd8ff',sw:'#ffa860'},azul:{c:0x5aa8ff,p:'#7fc0ff',q:'#e0f0ff',sw:'#5aa8ff'},
+ verde:{c:0x4cff9a,p:'#4cff9a',q:'#d8ffe8',sw:'#4cff9a'},violeta:{c:0xb07bff,p:'#b88aff',q:'#f0e0ff',sw:'#b07bff'},
+ blanco:{c:0xffffff,p:'#ffffff',q:'#cfe4ff',sw:'#ffffff'},arcoiris:{c:0xff66ff,p:'#ff66ff',q:'#66ffff',rb:1,sw:'#ff66ff'}};
+const ICON={clasica:'🚀',interceptor:'✈️',crucero:'🛳',fantasma:'🦇',destructor:'⚔️',platillo:'🛸',cohete:'🚀'};
+let HG={ship:'clasica',paint:'base',eng:'naranja',wpn:'Láser'};
+try{Object.assign(HG,JSON.parse(LS.g('su_hangar','{}')))}catch(e){}
+const keyOf={ship:id=>id==='clasica'?null:'ship:'+id,paint:id=>id==='base'?null:'col:'+id,eng:id=>id==='naranja'?null:'eng:'+id,wpn:n=>'sw:'+n};
+const okItem=(t,id)=>{const k=keyOf[t](id);return !k||has(k)};
+const saveHG=()=>LS.s('su_hangar',JSON.stringify(HG));
+const chk=()=>{if(!okItem('ship',HG.ship)||!SHIPS[HG.ship])HG.ship='clasica';if(!okItem('paint',HG.paint)||!PAINTS[HG.paint])HG.paint='base';if(!okItem('eng',HG.eng)||!ENGS[HG.eng])HG.eng='naranja'};
+
+/* geometría compartida; la nave apunta hacia -z y los motores van en +z */
+const SHIPS={
+ clasica:(M,P)=>{M(new THREE.ConeGeometry(.016,.1,10),'hull',0,0,0,[-Math.PI/2,0,0]);M(new THREE.BoxGeometry(.11,.003,.034),'wing',0,0,.02);M(new THREE.BoxGeometry(.003,.026,.026),'acc',0,.014,.036);
+  M(new THREE.SphereGeometry(.009,10,8),'glass',0,.011,-.012,0,[1,.8,1.7]);
+  for(const sx of[-1,1]){M(new THREE.CylinderGeometry(.005,.006,.014,8),'dark',sx*.013,0,.05,[Math.PI/2,0,0]);M(new THREE.BoxGeometry(.004,.004,.03),'acc',sx*.052,.003,.018)}return .058},
+ interceptor:(M,P)=>{M(new THREE.ConeGeometry(.011,.14,10),'hull',0,0,0,[-Math.PI/2,0,0]);
+  for(const sx of[-1,1]){M(new THREE.BoxGeometry(.055,.002,.07),'wing',sx*.03,0,.028,[0,-sx*.55,0]);M(new THREE.BoxGeometry(.002,.03,.03),'acc',sx*.013,.015,.052,[0,0,sx*.45]);M(new THREE.BoxGeometry(.003,.003,.05),'acc',sx*.058,0,.012)}
+  M(new THREE.SphereGeometry(.007,10,8),'glass',0,.009,-.022,0,[1,.7,2.2]);M(new THREE.CylinderGeometry(.006,.008,.016,8),'dark',0,0,.068,[Math.PI/2,0,0]);return .08},
+ crucero:(M,P)=>{M(new THREE.BoxGeometry(.05,.022,.12),'hull',0,0,.01);M(new THREE.ConeGeometry(.028,.06,4),'hull',0,0,-.08,[-Math.PI/2,Math.PI/4,0]);
+  M(new THREE.BoxGeometry(.026,.008,.02),'glass',0,.014,-.03);M(new THREE.BoxGeometry(.052,.002,.02),'acc',0,.0125,.035);
+  for(const sx of[-1,1]){M(new THREE.CylinderGeometry(.012,.012,.09,10),'wing',sx*.045,0,.02,[Math.PI/2,0,0]);M(new THREE.BoxGeometry(.03,.004,.012),'dark',sx*.03,0,.02);M(new THREE.CylinderGeometry(.006,.008,.012,8),'dark',sx*.045,0,.068,[Math.PI/2,0,0])}
+  for(const x of[-.016,0,.016])M(new THREE.CylinderGeometry(.006,.008,.014,8),'dark',x,0,.072,[Math.PI/2,0,0]);return .082},
+ fantasma:(M,P)=>{M(new THREE.ConeGeometry(.03,.12,4),'hull',0,0,-.005,[-Math.PI/2,0,0],[2.4,1,.22]);
+  for(const sx of[-1,1]){M(new THREE.BoxGeometry(.06,.002,.03),'wing',sx*.04,0,.035,[0,sx*.9,0]);M(new THREE.BoxGeometry(.004,.003,.016),'acc',sx*.066,0,.012);M(new THREE.BoxGeometry(.02,.004,.01),'dark',sx*.015,0,.05)}
+  M(new THREE.SphereGeometry(.007,10,8),'glass',0,.005,-.02,0,[1,.5,2]);return .06},
+ destructor:(M,P)=>{M(new THREE.BoxGeometry(.04,.02,.16),'hull',0,0,.01);M(new THREE.ConeGeometry(.02,.06,6),'hull',0,0,-.1,[-Math.PI/2,0,0]);
+  M(new THREE.BoxGeometry(.02,.02,.03),'wing',0,.02,.03);M(new THREE.BoxGeometry(.016,.006,.01),'glass',0,.032,.026);M(new THREE.BoxGeometry(.042,.002,.02),'acc',0,.0105,.05);
+  for(const sx of[-1,1]){M(new THREE.BoxGeometry(.06,.003,.07),'wing',sx*.05,0,.03,[0,sx*.25,0]);for(const k of[.045,.07]){M(new THREE.CylinderGeometry(.003,.003,.07,6),'dark',sx*k,0,-.02,[Math.PI/2,0,0])}}
+  for(const x of[-.022,-.009,.009,.022])M(new THREE.CylinderGeometry(.005,.007,.012,8),'dark',x,0,.092,[Math.PI/2,0,0]);return .102},
+ platillo:(M,P)=>{M(new THREE.SphereGeometry(.05,20,10),'hull',0,0,0,0,[1,.22,1]);M(new THREE.TorusGeometry(.042,.004,8,28),'acc',0,0,0,[Math.PI/2,0,0]);
+  M(new THREE.SphereGeometry(.022,14,10,0,Math.PI*2,0,Math.PI/2),'glass',0,.006,0);
+  for(let i=0;i<8;i++){const a=i/8*Math.PI*2;M(new THREE.SphereGeometry(.0035,6,6),'acc',Math.cos(a)*.046,.0,Math.sin(a)*.046)}M(new THREE.CylinderGeometry(.01,.014,.012,10),'dark',0,-.006,.045,[Math.PI/2,0,0]);return .054},
+ cohete:(M,P)=>{M(new THREE.CylinderGeometry(.016,.016,.1,12),'hull',0,0,0,[Math.PI/2,0,0]);M(new THREE.ConeGeometry(.016,.05,12),'acc',0,0,-.075,[-Math.PI/2,0,0]);
+  M(new THREE.SphereGeometry(.007,10,8),'glass',0,.012,-.03,0,[1,1,1.2]);
+  for(let i=0;i<3;i++){const a=i*Math.PI*2/3;M(new THREE.BoxGeometry(.003,.03,.025),'wing',Math.sin(a)*.021,Math.cos(a)*.021,.04,[0,0,-a])}
+  M(new THREE.ConeGeometry(.011,.016,10),'dark',0,0,.058,[Math.PI/2,0,0]);return .068}
+};
+
+buildShip=function(){chk();const P=PAINTS[HG.paint]||PAINTS.base,E=ENGS[HG.eng]||ENGS.naranja,g=new THREE.Group(),rb=[];
+  const col=r=>r==='hull'?P.h:r==='wing'?P.w:r==='acc'?P.a:r==='glass'?0x6fd7ff:0x555d74;
+  const M=(geo,role,x,y,z,rot,sc)=>{const em=role==='glass'?0x1a4a66:(role==='dark'?0:(P.em||0));
+    const mat=new THREE.MeshToonMaterial({color:col(role),gradientMap:GM(),emissive:new THREE.Color(em)});if(P.rb&&role!=='glass'&&role!=='dark')rb.push([mat,role]);
+    const m=new THREE.Mesh(geo,mat);m.position.set(x||0,y||0,z||0);if(rot){m.rotation.set(rot[0]||0,rot[1]||0,rot[2]||0)}if(sc)m.scale.set(sc[0],sc[1],sc[2]);g.add(m);return m};
+  const back=(SHIPS[HG.ship]||SHIPS.clasica)(M,P);
+  const emat=new THREE.MeshBasicMaterial({color:E.c,transparent:true,opacity:.9,blending:THREE.AdditiveBlending});
+  const eg=new THREE.Mesh(new THREE.SphereGeometry(.006,8,6),emat);eg.position.set(0,0,back);g.add(eg);g.userData.eng=eg;
+  g.userData.rb=rb;g.userData.erb=!!E.rb;g.userData.emat=emat;
+  g.scale.setScalar(.5);g.traverse(o=>o.raycast=()=>{});g.visible=false;scene.add(g);return g};
+
+/* arcoíris animado y color de la estela del motor */
+let curE=ENGS.naranja,hueT=0;
+function applyEng(){chk();curE=ENGS[HG.eng]||ENGS.naranja}
+const _emit=emit;emit=function(p,v,c,l){if(shipOn){if(c==='#ffb060')c=curE.rb?'hsl('+((hueT*360)%360|0)+',100%,65%)':curE.p;else if(c==='#9fd8ff')c=curE.rb?'hsl('+(((hueT*360)+180)%360|0)+',100%,75%)':curE.q}return _emit.call(this,p,v,c,l)};
+(function rbLoop(){hueT=(hueT+.0022)%1;const m=typeof SH!=='undefined'&&SH.mesh;
+  if(m&&m.userData){const u=m.userData;if(u.rb&&u.rb.length)u.rb.forEach(([mt,role],i)=>mt.color.setHSL((hueT+(role==='hull'?0:role==='wing'?.33:.66))%1,.75,.55));
+    if(u.erb&&u.emat)u.emat.color.setHSL((hueT*2)%1,1,.65)}
+  requestAnimationFrame(rbLoop)})();
+
+function rebuild(){applyEng();try{const old=SH.mesh;if(old){scene.remove(old);old.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material)o.material.dispose()});SH.mesh=null}
+  SH.mesh=buildShip();if(shipOn)SH.mesh.visible=SH.view==='third'}catch(e){console.warn('rebuild',e)}}
+
+/* ---------------------------------------------------------------
+   5 · ARMAS DE NAVE (se añaden a las 3 de siempre)
+   --------------------------------------------------------------- */
+const NS=[
+ {n:'Plasma',v:150,cd:.25,col:'#7dff6a',w:{radius:.3,depth:.12,power:1.3,color:'#7dff6a',sparks:50,shake:.2}},
+ {n:'Ráfaga',v:260,cd:.35,col:'#ffe066',box:true,multi:3,spread:.012,w:{radius:.07,depth:.03,power:.35,color:'#ffe066',sparks:10,shake:.03}},
+ {n:'Riel',v:600,cd:1.4,col:'#9fe8ff',box:true,w:{radius:.12,depth:.5,power:3.2,color:'#9fe8ff',sparks:80,shake:.4}},
+ {n:'Enjambre',v:90,cd:1.6,col:'#ff9d5c',multi:6,spread:.05,w:{radius:.2,depth:.08,power:.9,color:'#ff9d5c',sparks:30,shake:.1}},
+ {n:'Pulsar',v:180,cd:.5,col:'#b08aff',w:{radius:.5,depth:.2,power:2,color:'#b08aff',sparks:90,shake:.3}},
+ {n:'Nova',v:50,cd:3.5,col:'#fff2b0',w:{radius:1.2,depth:.5,power:5,color:'#fff2b0',sparks:260,shake:.9}}];
+try{NS.forEach(w=>{if(!SWP.some(x=>x.n===w.n))SWP.push(w)})}catch(e){console.warn('SWP',e)}
+const wUnlocked=w=>has('sw:'+w.n)||['Láser','Misil','Torpedo'].includes(w.n);
+function setW(i){swi=i;try{sg('swp').textContent='⇄ '+SWP[swi].n}catch(e){}HG.wpn=SWP[swi].n;saveHG()}
+shipWeapon=function(){let n=0;for(let i=0;i<SWP.length;i++){swi=(swi+1)%SWP.length;if(wUnlocked(SWP[swi]))break;n++}
+  sg('swp').textContent='⇄ '+SWP[swi].n;HG.wpn=SWP[swi].n;saveHG();toast('Arma: '+SWP[swi].n)};
+const _sa=shipArms;shipArms=function(dt,fw,up){const W=SWP[swi],n0=SS.length;_sa.apply(this,arguments);
+  if(W.multi&&SS.length>n0){const s=SS[SS.length-1];for(let i=1;i<W.multi;i++){const m=s.m.clone();const p=rv();p.addScaledVector(fw,-p.dot(fw));m.position.addScaledVector(p,.02);const v=s.v.clone().addScaledVector(p,W.v*(W.spread||.02)*2);scene.add(m);SS.push({m,v,life:5,W})}}};
+setTimeout(()=>{const i=SWP.findIndex(w=>w.n===HG.wpn);if(i>=0&&wUnlocked(SWP[i]))setW(i)},0);
+
+/* ---------------------------------------------------------------
+   6 · HANGAR (elegir nave, pintura, motor y arma)
+   --------------------------------------------------------------- */
+const css=document.createElement('style');css.textContent=
+'#hgp,#intp{z-index:2900}#hgp .mcard{max-width:720px}#hgp .hgs{padding-top:8px;overflow:auto;display:flex;flex-direction:column;gap:12px;touch-action:pan-y}#hgp h4{margin:2px 0 6px;font-size:13px;color:var(--dim);letter-spacing:.04em;text-transform:uppercase}'+
+'#hgp .hgg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:7px}#hgp .hgo{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;border:1px solid var(--line);border-radius:12px;padding:8px 10px;position:relative}'+
+'#hgp .hgo,#hgp .hgo b,#hgp .hgo small{color:var(--ink)}#hgp .hgo small{color:var(--dim)}#hgp .hgo.on{border-color:var(--acc);background:#ff7a3d40;color:var(--ink)}#hgp .hgo.on b{color:var(--ink)}#hgp .hgo.on small{color:var(--ink);opacity:.8}#hgp .hgo.lk{opacity:.7}#hgp .hgo b{font-size:14px}#hgp .hgo small{color:var(--dim);font-size:12px;line-height:1.25}#hgp .hgo .pr{font-size:12px;color:#ffd66b!important;font-weight:700}'+
+'#hgp .sw{display:inline-block;width:18px;height:18px;border-radius:50%;border:2px solid #ffffff55;vertical-align:middle;margin-right:5px}#hgp .hgi{font-size:22px;line-height:1}#hgp .hgt{color:var(--dim);font-size:13px}'+
+'.nb2{display:inline-block;margin-left:5px;padding:1px 6px;border-radius:99px;background:#ff7a3d;color:#000;font-size:10px;font-weight:700;vertical-align:middle}'+
+'#intp .mcard{max-width:760px;min-height:min(560px,100%)}#intp .ib{overflow:auto;flex:1;touch-action:pan-y;display:flex;flex-direction:column;gap:10px;line-height:1.5;font-size:15px}'+
+'#intp .hero{border-radius:16px;padding:18px 16px;text-align:center;background:radial-gradient(ellipse at 50% 0,#ff7a3d44,transparent 60%),linear-gradient(160deg,#1a1f4a,#0a0d22);border:1px solid var(--line)}#intp .hero h2{margin:0 0 6px;font-size:26px}#intp .hero p{margin:4px 0;color:var(--dim)}'+
+'#intp .stp{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}#intp .stp>div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#ffffff08}#intp .stp b{display:block;margin-bottom:2px}'+
+'#intp table{border-collapse:collapse;width:100%;font-size:14px}#intp td{border-bottom:1px solid var(--line);padding:5px 4px;vertical-align:top}#intp td:first-child{white-space:nowrap;color:var(--acc)}'+
+'#intp .ia{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}#intp .ia button{border-color:var(--line)}#intp .ia button.go{border-color:var(--acc);background:#ff7a3d26}#intp .note{border-left:3px solid var(--acc);padding:4px 10px;color:var(--dim);background:#ffffff08;border-radius:0 8px 8px 0}'+
+'#intp h3{margin:2px 0}#intp ul{margin:4px 0;padding-left:20px}#intp kbd{border:1px solid var(--line);border-radius:5px;padding:0 5px;font-size:12px;background:#ffffff10}';
+document.head.appendChild(css);
+
+const hgp=document.createElement('div');hgp.className='mdl';hgp.id='hgp';
+hgp.innerHTML='<div class="mcard" role="dialog" aria-label="Hangar"><div class="mh"><b>🛠 Hangar</b><button class="x" id="hgx" aria-label="Cerrar">✕</button></div><div class="hgt" id="hgm"></div><div class="hgs" id="hgb"></div></div>';
+document.body.appendChild(hgp);
+function hgItem(type,id,name,price,desc,on,extra){const k=keyOf[type](id),ok=!k||has(k);
+  return '<button class="hgo'+(on?' on':'')+(ok?'':' lk')+'" data-t="'+type+'" data-i="'+esc(id)+'"><span>'+(extra||'')+'<b>'+esc(name)+'</b></span>'+(ok?'':'<span class="pr">🔒 '+price+' 🪙</span>')+(desc?'<small>'+esc(desc)+'</small>':'')+'</button>'}
+function hgRender(){chk();let h='';const D=HGD;
+  h+='<div><h4>Nave</h4><div class="hgg">'+hgItem('ship','clasica','Clásica',0,'La nave de siempre',HG.ship==='clasica','<span class="hgi">🚀</span> ')+D.ships.map(([id,n,p,d])=>hgItem('ship',id,n,p,d,HG.ship===id,'<span class="hgi">'+(ICON[id]||'🚀')+'</span> ')).join('')+'</div></div>';
+  h+='<div><h4>Pintura</h4><div class="hgg">'+hgItem('paint','base','Original',0,'',HG.paint==='base','<i class="sw" style="background:linear-gradient(135deg,#cfd6e6 50%,#ff7a3d 50%)"></i>')+D.paints.map(([id,n,p,d])=>{const q=PAINTS[id];return hgItem('paint',id,n,p,d,HG.paint===id,'<i class="sw" style="background:'+(q.rb?'conic-gradient(red,yellow,lime,cyan,blue,magenta,red)':'linear-gradient(135deg,'+q.sw[0]+' 50%,'+q.sw[1]+' 50%)')+'"></i>')}).join('')+'</div></div>';
+  h+='<div><h4>Motor</h4><div class="hgg">'+hgItem('eng','naranja','Naranja',0,'',HG.eng==='naranja','<i class="sw" style="background:#ffa860;box-shadow:0 0 8px #ffa860"></i>')+D.engs.map(([id,n,p,d])=>{const q=ENGS[id];return hgItem('eng',id,n,p,d,HG.eng===id,'<i class="sw" style="background:'+(q.rb?'conic-gradient(red,yellow,lime,cyan,blue,magenta,red)':q.sw)+';box-shadow:0 0 8px '+q.sw+'"></i>')}).join('')+'</div></div>';
+  h+='<div><h4>Arma de la nave</h4><div class="hgg">'+SWP.map(w=>{const nw=D.sw.find(x=>x[0]===w.n);return hgItem('wpn',w.n,w.n,nw?nw[2]:0,nw?nw[3]:(w.n==='Láser'?'Rápido y barato':w.n==='Misil'?'Explosivo':'Daño pesado y lento'),SWP[swi]===w,'<i class="sw" style="background:'+w.col+';box-shadow:0 0 8px '+w.col+'"></i>')}).join('')+'</div></div>';
+  $('hgb').innerHTML=h;$('hgm').innerHTML='Elige cómo se ve y qué dispara tu nave. Lo bloqueado se compra con 🪙 <b style="color:#ffd66b">'+(window.SUCoins?Math.floor(window.SUCoins.coins).toLocaleString('es'):0)+'</b>.'}
+function hgOpen(){hgRender();hgp.classList.add('show');LS.s('su_hg1','1');document.querySelectorAll('.nb2.hg').forEach(n=>n.remove())}
+$('hgx').onclick=()=>hgp.classList.remove('show');hgp.addEventListener('click',e=>{if(e.target===hgp){hgp.classList.remove('show');return}
+  const b=e.target.closest('.hgo');if(!b)return;const t=b.dataset.t,id=b.dataset.i,k=keyOf[t](id);
+  if(k&&!has(k)){ask(k,b);return}
+  if(t==='ship'){HG.ship=id;saveHG();rebuild()}else if(t==='paint'){HG.paint=id;saveHG();rebuild()}else if(t==='eng'){HG.eng=id;saveHG();rebuild()}
+  else if(t==='wpn'){const i=SWP.findIndex(w=>w.n===id);if(i>=0)setW(i)}
+  hgRender();say('✔ Equipado')});
+document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('#cov')&&hgp.classList.contains('show'))setTimeout(()=>{if(hgp.classList.contains('show'))hgRender()},120)},true);
+const hb=document.createElement('button');hb.id='hangarb';hb.title='Hangar: elige nave, pintura, motor y arma';hb.innerHTML='🛠 Hangar'+(LS.g('su_hg1','0')==='1'?'':'<span class="nb2 hg">¡Nuevo!</span>');hb.onclick=hgOpen;
+try{$('shipb').insertAdjacentElement('afterend',hb)}catch(e){}
+try{const sx=sg('sx'),hb2=document.createElement('button');hb2.id='shg';hb2.textContent='🛠 Hangar';hb2.onclick=hgOpen;sx.parentNode.insertBefore(hb2,sx)}catch(e){}
+chk();applyEng();
+window.addEventListener('keydown',e=>{if(e.key==='Escape'&&hgp.classList.contains('show')){hgp.classList.remove('show');e.stopPropagation()}},true);
+
+/* ---------------------------------------------------------------
+   7 · INTRODUCCIÓN (botón 🌠 Introducción, arriba)
+   --------------------------------------------------------------- */
+const IS=[
+ {k:'ini',t:'🌠 Inicio',h:()=>'<div class="hero"><h2>SpaceUni <b style="color:var(--acc)">Sandbox</b></h2><p>Un simulador de gravedad donde tú pones las reglas del universo.</p><p>Crea planetas, estrellas y agujeros negros, míralos orbitar… y destrúyelos cuando quieras.</p></div>'+
+  '<p>Aquí tienes una guía rápida del juego, dividida en secciones. Usa las pestañas de arriba para saltar a la que te interese, o pulsa <b>Siguiente</b>.</p>'+
+  '<div class="stp"><div><b>🪐 Crea y observa</b>Todo lo que tiene masa atrae a lo demás: tú lanzas los cuerpos y la gravedad hace el resto.</div><div><b>💥 Destruye</b>Armas desde un misil hasta una supernova o un Big Bang.</div><div><b>🚀 Pilota</b>Vuela tu propia nave por el sistema que armaste.</div><div><b>🪙 Progresa</b>Gana monedas y desbloquea naves, colores, armas y mundos en la tienda.</div></div>'},
+ {k:'pas',t:'👣 Primeros pasos',h:()=>'<p>Si es tu primera vez, haz esto en orden:</p><div class="stp"><div><b>1 · Abre un escenario</b>Abajo del todo hay botones como <b>Sistema solar</b> o <b>Binaria</b>. Tócalos y verás órbitas reales funcionando.</div><div><b>2 · Crea algo</b>Entra al modo <b>Crear</b>, elige un cuerpo y <b>arrastra</b> en la pantalla: lo que arrastras es su velocidad inicial.</div><div><b>3 · Cambia el tiempo</b>Con <b>Pausa</b> y <b>− +</b> detienes o aceleras la simulación. <b>Estelas</b> dibuja el camino de cada cuerpo.</div><div><b>4 · Rómpelo todo</b>Pasa al modo <b>Destruir</b>, elige un arma y toca un cuerpo. Los restos siguen orbitando.</div></div><div class="note">Si algo se rompe o te pierdes, <b>Limpiar</b> borra todo y <kbd>Ctrl</kbd>+<kbd>Z</kbd> deshace el último cambio.</div>'},
+ {k:'mod',t:'🎮 Los 5 modos',h:()=>'<table><tr><td>1 · Crear</td><td>Elige categoría y cuerpo (Mundos, Secuencia, Compactas, Agujeros negros, <b>Mundos raros</b>…). Arrastra y suelta.</td></tr><tr><td>2 · Editar</td><td>Toca un cuerpo para cambiar su masa, tamaño y colores, fijarlo, frenarlo o eliminarlo.</td></tr><tr><td>3 · Destruir</td><td>Elige un arma (láser, nuclear, supernova, <b>plasma, microagujero negro, Big Bang</b>…) y toca un cuerpo.</td></tr><tr><td>4 · Cámara</td><td>Gira y acerca la vista sin crear nada por accidente.</td></tr><tr><td>5 · Mover</td><td>Desplázate por el espacio hacia otros sistemas.</td></tr></table><div class="note">Los números <kbd>1</kbd>–<kbd>5</kbd> del teclado cambian de modo.</div>'},
+ {k:'tie',t:'🪙 Tienda y monedas',h:()=>'<p>Toca <b>🪙</b> (arriba a la izquierda) para abrir la tienda. Las monedas se ganan de varias formas:</p><ul><li><b>Monedas flotantes</b>: tócalas cuando aparezcan. Si encadenas varias seguidas subes tu <b>combo</b> (hasta x5).</li><li><b>💎 Gemas</b> y <b>☄️ cometas</b> valen mucho más; <b>⭐ la estrella</b> activa la <b>fiebre</b> (x2 durante 12 s).</li><li>También ganas al <b>crear cuerpos</b>, descubrir galaxias y cuando chocan universos.</li><li>Cada día que vuelves hay un <b>regalo diario</b> que sube con tu racha.</li></ul><p>En la tienda puedes desbloquear:</p><ul><li><b>Cuerpos</b> nuevos, incluida la categoría <b>Mundos raros</b> (diamante, hierro, cristal, oro, gigantes de neón…).</li><li><b>Armas</b> para el modo Destruir y <b>armas para tu nave</b>.</li><li><b>Escenarios</b> listos para explorar.</li><li><b>Naves</b>, <b>pinturas</b> y <b>motores de colores</b> (hasta arcoíris).</li><li><b>Mejoras</b> como el Imán de monedas o el Radar.</li></ul><div class="ia"><button class="go" data-ia="shop">🪙 Abrir la tienda</button></div>'},
+ {k:'nav',t:'🚀 Tu nave y el Hangar',h:()=>'<p>Pulsa <b>🚀 Nave</b> (barra de abajo) para pilotar en primera o tercera persona dentro del sistema que construiste.</p><table><tr><td><kbd>W</kbd> <kbd>S</kbd></td><td>Avanzar / retroceder · <kbd>A</kbd> <kbd>D</kbd> a los lados</td></tr><tr><td><kbd>Espacio</kbd> <kbd>C</kbd></td><td>Subir / bajar</td></tr><tr><td><kbd>Q</kbd> <kbd>E</kbd></td><td>Rolar</td></tr><tr><td><kbd>Shift</kbd> · <kbd>X</kbd></td><td>Impulso · frenar</td></tr><tr><td><kbd>J</kbd> · <kbd>T</kbd></td><td>Disparar · cambiar de arma</td></tr><tr><td><kbd>V</kbd> · <kbd>Esc</kbd></td><td>Cambiar vista · salir</td></tr></table><p>Cuidado: un agujero negro te traga, una estrella te incinera y el calor extremo sobrecalienta la nave.</p><p>En el <b>🛠 Hangar</b> eliges tu <b>nave</b> (Interceptor, Crucero, Fantasma, Destructor, Platillo, Cohete…), su <b>pintura</b>, el color del <b>motor</b> y el <b>arma</b> que dispara. Lo que no tengas se compra con monedas.</p><div class="ia"><button class="go" data-ia="hangar">🛠 Abrir el Hangar</button></div>'},
+ {k:'ata',t:'⌨️ Atajos',h:()=>'<table><tr><td><kbd>1</kbd>–<kbd>5</kbd></td><td>Cambiar de modo</td></tr><tr><td><kbd>Espacio</kbd></td><td>Pausa</td></tr><tr><td><kbd>+</kbd> <kbd>−</kbd></td><td>Velocidad del tiempo</td></tr><tr><td><kbd>W A S D</kbd> / flechas</td><td>Moverte · <kbd>Q</kbd> <kbd>E</kbd> acercar / alejar</td></tr><tr><td><kbd>Shift</kbd> + arrastrar</td><td>Mover la cámara (o clic derecho)</td></tr><tr><td><kbd>T</kbd> · <kbd>N</kbd> · <kbd>V</kbd></td><td>Estelas · Nombres · Vida estelar</td></tr><tr><td><kbd>F</kbd></td><td>Enfocar el cuerpo seleccionado</td></tr><tr><td><kbd>Supr</kbd></td><td>Eliminar el cuerpo seleccionado</td></tr><tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Y</kbd></td><td>Deshacer / rehacer</td></tr><tr><td><kbd>H</kbd></td><td>Tutorial</td></tr></table><div class="note">En celular: un dedo crea o gira, dos dedos mueven la cámara y pellizcar hace zoom.</div>'},
+ {k:'tip',t:'💡 Consejos',h:()=>'<ul><li>Una <b>órbita</b> es una caída que nunca termina: muy lento y chocas, muy rápido y sales disparado.</li><li>Pon una <b>estrella</b> en el centro antes de lanzar planetas; sin masa grande no hay órbitas estables.</li><li>Activa <b>Vida estelar</b> (⚙ Ajustes) para ver cómo envejecen las estrellas.</li><li>Prueba los escenarios <b>Duelo de agujeros negros</b> y <b>Lluvia de cometas</b> de la tienda.</li><li>Si tu equipo va lento, baja los <b>Gráficos</b> o apaga los efectos.</li><li>Abre <b>📖 Guías</b> si no sabes cómo crear algo concreto, y <b>🌍 Mundos</b> para viajar a un cuerpo.</li></ul><div class="ia"><button data-ia="guides">📖 Abrir Guías</button><button data-ia="tut">❔ Ver el tutorial</button></div>'}
+];
+let ii=0;
+const intp=document.createElement('div');intp.className='mdl';intp.id='intp';
+intp.innerHTML='<div class="mcard" role="dialog" aria-label="Introducción"><div class="mh"><b>🌠 Introducción</b><button class="x" id="intx" aria-label="Cerrar">✕</button></div><div class="chips" id="intc"></div><div class="ib" id="intb"></div><div class="t" style="display:flex;justify-content:space-between;gap:8px"><button id="intp0">Anterior</button><button id="intp1" class="on">Siguiente</button></div></div>';
+document.body.appendChild(intp);
+function intRender(){$('intc').innerHTML=IS.map((s,i)=>'<button data-i="'+i+'" class="'+(i===ii?'on':'')+'">'+s.t+'</button>').join('');$('intb').innerHTML=IS[ii].h();$('intb').scrollTop=0;$('intp0').style.visibility=ii?'visible':'hidden';$('intp1').textContent=ii===IS.length-1?'¡A jugar!':'Siguiente'}
+function intOpen(i){try{closeAll()}catch(e){}ii=i||0;intRender();intp.classList.add('show');LS.s('su_intro1','1');const n=document.querySelector('#introb .nb2');if(n)n.remove()}
+function intClose(){intp.classList.remove('show')}
+$('intx').onclick=intClose;intp.addEventListener('click',e=>{if(e.target===intp){intClose();return}
+  const c=e.target.closest('#intc button');if(c){ii=+c.dataset.i;intRender();return}
+  const a=e.target.closest('[data-ia]');if(a){const v=a.dataset.ia;intClose();setTimeout(()=>{if(v==='shop'&&window.SUCoins)window.SUCoins.shop();else if(v==='hangar')hgOpen();else if(v==='guides'&&window.Orbita&&Orbita.openGuides)Orbita.openGuides();else if(v==='tut')tutOpen(0)},60)}});
+$('intp0').onclick=()=>{if(ii>0){ii--;intRender()}};$('intp1').onclick=()=>{if(ii<IS.length-1){ii++;intRender()}else intClose()};
+const ib=document.createElement('button');ib.id='introb';ib.title='Introducción al juego: qué es, cómo empezar, tienda, nave y atajos';ib.innerHTML='🌠 Introducción'+(LS.g('su_intro1','0')==='1'?'':'<span class="nb2">¡Nuevo!</span>');ib.onclick=()=>intOpen(0);
+try{const t=document.getElementById('topx');t.insertBefore(ib,t.firstChild)}catch(e){console.warn('intro btn',e)}
+window.addEventListener('keydown',e=>{if(!intp.classList.contains('show'))return;if(e.key==='Escape'){intClose();e.stopPropagation()}else if(e.key==='ArrowRight'){$('intp1').click();e.stopPropagation()}else if(e.key==='ArrowLeft'){$('intp0').click();e.stopPropagation()}},true);
+try{const t=document.getElementById('smtut');if(t){const mb=document.createElement('button');mb.id='smintro';mb.textContent='🌠 Introducción';mb.onclick=()=>intOpen(0);t.after(mb)}}catch(e){}
+window.SUExp={intro:intOpen,hangar:hgOpen,get hangarState(){return HG}};
+}catch(e){console.warn('Expansión no se pudo iniciar',e)}})();
+
+</script>
 </body>
 </html>
