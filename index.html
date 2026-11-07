@@ -4482,7 +4482,7 @@ ov.addEventListener('pointerdown',e=>{e.preventDefault();au.init();if(AUD&&AUD.p
  if(G.ph==='lose'&&G.end>(G.bad?G.skipOk:1.6)){retry();return}
  if(G.ph==='win'&&G.end>(G.wskip||34)){stop();return}
  if(n-lastTap<300&&Math.hypot(e.clientX-lastTapX,e.clientY-lastTapY)<70)dash();lastTap=n;lastTapX=e.clientX;lastTapY=e.clientY});
-ov.addEventListener('pointermove',e=>{if(!down||!G)return;const dx=e.clientX-lpx,dy=e.clientY-lpy;lpx=e.clientX;lpy=e.clientY;P.tx+=dx*1.35;P.ty+=dy*1.35;clampP()});
+ov.addEventListener('pointermove',e=>{if(!down||!G)return;const dx=e.clientX-lpx,dy=e.clientY-lpy;lpx=e.clientX;lpy=e.clientY;P.tx+=dx;P.ty+=dy;clampP()});
 const up=()=>{down=0};ov.addEventListener('pointerup',up);ov.addEventListener('pointercancel',up);
 const KS={};addEventListener('keydown',e=>{if(!running)return;KS[e.key.toLowerCase()]=1;if(e.key===' '||e.key==='Shift'){dash();e.preventDefault()}if(e.key==='Escape')stop()});addEventListener('keyup',e=>{KS[e.key.toLowerCase()]=0});
 function clampP(){const bossy=G&&(G.ph==='boss'||G.ph==='win');P.tx=clamp(P.tx,W*.06,W*.94);P.ty=clamp(P.ty,bossy?H*.12:H*.32,H*.88)}
@@ -4543,7 +4543,7 @@ function step(dt){if(!G)return;G.tm+=dt;RT+=dt;const g=G;if(g.ph==='dodge'||g.ph
  for(let i=PT.length-1;i>=0;i--){const p=PT[i];p.l-=dt;if(p.l<=0){PT.splice(i,1);continue}p.x+=p.vx*dt;p.y+=p.vy*dt}
  if(Math.random()<dt*.18&&g.ph!=='lose')GL=Math.max(GL,.25);
  if(g.ph==='dodge'||g.ph==='boss'||g.ph==='win'){const kx=(KS.arrowright||KS.d?1:0)-(KS.arrowleft||KS.a?1:0),ky=(KS.arrowdown||KS.s?1:0)-(KS.arrowup||KS.w?1:0);if(kx||ky){P.tx+=kx*W*.7*dt;P.ty+=ky*W*.7*dt;clampP()}
-  P.x+=(P.tx-P.x)*Math.min(1,dt*16);P.y+=(P.ty-P.y)*Math.min(1,dt*16);P.inv=Math.max(0,P.inv-dt);P.dcd=Math.max(0,P.dcd-dt);P.dash=Math.max(0,P.dash-dt);P.ov=Math.max(0,P.ov-dt);
+  P.x+=(P.tx-P.x)*Math.min(1,dt*45);P.y+=(P.ty-P.y)*Math.min(1,dt*45);P.inv=Math.max(0,P.inv-dt);P.dcd=Math.max(0,P.dcd-dt);P.dash=Math.max(0,P.dash-dt);P.ov=Math.max(0,P.ov-dt);
   if(P.dash>0)TR.push({x:P.x,y:P.y,l:.25})}
  for(let i=TR.length-1;i>=0;i--){TR[i].l-=dt;if(TR[i].l<=0)TR.splice(i,1)}
  if(g.ph==='pre'){if(Math.random()<dt*7)au.hiss();if(g.tm>5){g.ph='intro';g.tm=0;GL=1;SHK=10;flashW=.6;au.boom();au.glitch()}return}
